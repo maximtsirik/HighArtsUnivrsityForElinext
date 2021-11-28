@@ -45,7 +45,7 @@ public class LoadData {
         Auditorium.AuditoriumBuilder auditoriumBuilder = Auditorium.builder();
         Lesson.LessonBuilder lessonBuilder = Lesson.builder();
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 5; i++) {
             groupService.insert(
                     groupBuilder
                             .number(getGroupNumber())
@@ -54,7 +54,7 @@ public class LoadData {
         }
         log.info("Groups were added");
 
-        getFullNames(500).forEach(
+        getFullNames(50).forEach(
                 el -> studentService
                         .insert(studentBuilder
                                 .fullName(el)
@@ -104,7 +104,7 @@ public class LoadData {
                 group -> {
                     Timetable.TimetableBuilder timetableBuilder = Timetable.builder();
                     LocalDate firstDay = LocalDate.of(2021, 9, 1);
-                    LocalDate lastDay = LocalDate.of(2021, 9, 30);
+                    LocalDate lastDay = LocalDate.of(2021, 9, 15);
 
                     while (!firstDay.isEqual(lastDay)) {
                         if (firstDay.getDayOfWeek().equals(DayOfWeek.SUNDAY) || firstDay.getDayOfWeek().equals(DayOfWeek.SATURDAY)) {

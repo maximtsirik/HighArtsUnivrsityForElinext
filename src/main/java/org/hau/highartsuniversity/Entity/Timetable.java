@@ -30,7 +30,7 @@ public class Timetable {
     private Set<Lesson> lessons;
 
     @JsonIgnore
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "group_id")
     private Group group;
 }

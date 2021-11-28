@@ -2,29 +2,23 @@ version: '2'
 
 services:
   app:
+    image: 'high-arts-university:latest'
     build:
       context: .
-    container_name: university-app
+    container_name: app
     depends_on:
       - db
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/highartsuniversity
       - SPRING_DATASOURCE_USERNAME=highartsuniversity
       - SPRING_DATASOURCE_PASSWORD=password
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     ports:
-      - "8000:8080"
-    restart: always
+      - "8080:8080"
+
   db:
-    image: 'postgres'
+    image: 'postgres:13.1-alpine'
     container_name: db
     environment:
       - POSTGRES_USER=highartsuniversity
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=highartsuniversity
-    ports:
-      - "5000:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-
-    restart: always

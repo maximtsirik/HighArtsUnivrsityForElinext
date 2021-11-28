@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/api/v1/student")
@@ -23,11 +22,6 @@ public class StudentController {
     public ResponseEntity<Timetable> getTimetableByDate(@PathVariable String studentId,
                                                         @PathVariable String date) {
         return new ResponseEntity<>(studentService.getTimetableByDate(studentId, date), HttpStatus.OK);
-    }
-
-    @GetMapping("/{studentId}/timetable")
-    public ResponseEntity<Set<Timetable>> getTimetable(@PathVariable String studentId) {
-        return new ResponseEntity<>(studentService.getTimetable(studentId), HttpStatus.OK);
     }
 
     @GetMapping

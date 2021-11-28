@@ -20,7 +20,7 @@ public class Group {
 
     private int number;
 
-    @OneToMany(mappedBy = "group")
+    @OneToMany(mappedBy = "group", fetch = FetchType.EAGER)
     private Set<Timetable> timetable;
 
 

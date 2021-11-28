@@ -45,10 +45,6 @@ public class StudentService {
         insert(dbStudent);
     }
 
-    public Set<Timetable> getTimetable(String studentId) {
-        return getById(studentId).getGroup().getTimetable();
-    }
-
     public Timetable getTimetableByDate(String studentId, String date) {
         Set<Timetable> timetableSet = getById(studentId).getGroup().getTimetable();
         for (Timetable timetable : timetableSet) {
