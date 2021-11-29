@@ -22,7 +22,7 @@ GET <http://localhost:8080/api/v1/student/6/timetable/2021-09-02>
 
 Generating data required an internet connection.
 
-Also, timetable generation dates are from 01.09.2021 to 30.09.2021 (weekends are foreseen). It takes more time to
+Also, timetable generation dates are from 01.09.2021 to 15.09.2021 (weekends are foreseen). It takes more time to
 generate data than when starting a regular application
 
 Model list:
